@@ -5,6 +5,13 @@
     <!--左侧导航开始-->
     <?php include 'resources.php';?>
     <!--左侧导航结束-->
+    <style type="text/css">
+    .input-group{
+        margin-top:5px;
+    }
+    </style>
+    
+    
     <script>
     $(document).ready(function(){
         //区的变化
@@ -201,6 +208,7 @@
         <div class="text-center col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
             <button type="submit" class="btn btn-warning btn-block">注&nbsp;&nbsp;册</button>
         </div>
+       
     </form>
 </body>
 <script>

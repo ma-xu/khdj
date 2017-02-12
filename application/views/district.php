@@ -97,12 +97,12 @@
                             <div class="btn-group col-sm-8">
                                 <button type="button" class="btn btn-primary" onclick="insert_show()">添加</button>
                             </div>
-                            <div class="col-sm-4">
+<!--                            <div class="col-sm-4">
                                 <div class="input-group">
                                     <input type="text" placeholder="请输入关键词" class="input-sm form-control"> <span class="input-group-btn">
                                         <button type="button" class="btn btn-sm btn-primary"> 搜索</button> </span>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="table-responsive">
                             <table class="table table-hover" id='district_table'>

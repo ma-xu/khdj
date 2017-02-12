@@ -266,8 +266,7 @@
                                 </thead>
                                 <tbody>
                                     <?php foreach($families as $family):?> 
-                                    <tr>
-                                        
+                                    <tr>                                       
                                         <td><?php echo $family['id'];?></td>
                                         <td><?php echo $family['code'];?></td>
                                         <td><a href="<?=site_url('Family/choseUser/').$family['id'];?>"><?php echo $family['name'];?></a></td>
@@ -280,7 +279,7 @@
                                                 <button type="button" class="btn btn-warning" onclick="edit_family(<?php echo $family['id'];?>)">修改</button>
                                                 <button type="button" class="btn btn-danger" onclick="delete_family(<?php echo $family['id'];?>)">删除</button>
                                             </div>
-                                        </td>
+                                        </td>                                       
                                     </tr>
                                     <?php endforeach;?>
                                 </tbody>

@@ -23,9 +23,9 @@ class Community extends CI_Controller{
         $this->load->view('community',$data);
     }
     
-    public function filterdistrict($p1)
+    public function filterdistrict()
     {
-        
+        $p1 = $this->input->get('p1');
         $this->load->helper('url');
         $districtid=$p1;
         $data=$this->Model_community->getcommunityinfo1_page($districtid);
@@ -36,8 +36,10 @@ class Community extends CI_Controller{
         $data['total_counts']=$this->session->userdata('conmmunities_count');
         $this->load->view('community',$data);
     }
-    public function filterstreet($p1,$p2)
+    public function filterstreet()
     {
+        $p1 = $this->input->get('p1');
+        $p2 = $this->input->get('p2');
         //$data['communities']=array();
         $this->load->helper('url');
         //$districtid=$this->input->post('districtid');

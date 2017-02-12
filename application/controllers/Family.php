@@ -27,34 +27,40 @@ class Family extends CI_Controller{
     
     public function filterdistrict()
     {
+        $p1 = $this->input->get('p1');
         $data['streets']=array();
         $this->load->helper('url');
         $districtid=$p1;
         $data=$this->Model_family->getfamilyinfo1($districtid);
+        
         $data['streets']=$this->Model_street->getstreetinfo($districtid);
-        $data['families']=$this->Model_family->getfamilyinfo1($districtid);
+       // $data['families']=$this->Model_family->getfamilyinfo1($districtid);
         //$streetid=$data['streets'][0]['id'];
         $data['communities']=$this->Model_community->getcommunityinfo1($districtid);
         //$communityid=$data['communities'][0]['id'];
         //$data['families']=$this->Model_family->getfamilyinfo();
         //print_r($data['streets']);
         $data['districts'] = $this->Model_district->query_all();
-        $data['total_counts']=$this->session->userdata('families_count');
+        $data['total_counts']=$this->Model_family->getCount();
         $data['choseid1']=$districtid;
         $data['choseid2']='';
         $data['choseid3']='';
+        //var_dump($data['families']);
         $this->load->view('family',$data);
     }
-    public function filterstreet($p1,$p2)
+    public function filterstreet()
     {
+        $p1 = $this->input->get('p1');
+        $p2 = $this->input->get('p2');
         //$data['communities']=array();
         $this->load->helper('url');
         //$districtid=$this->input->post('districtid');
         $streetid=$_GET['p1'];
         $districtid=$_GET['p2'];
-        $data['families']=$this->Model_family->getfamilyinfo2($streetid);
+        $data=$this->Model_family->getfamilyinfo2($streetid,$districtid);
         $data['communities']=$this->Model_community->getcommunityinfo2($streetid);
         $data['streets'] = $this->Model_street->query_all();
+        $data['total_counts']=$this->Model_family->getCount();
         $data['districts'] = $this->Model_district->query_all();
         $data['choseid1']=$districtid;
         $data['choseid2']=$streetid;
@@ -62,8 +68,11 @@ class Family extends CI_Controller{
         $this->load->view('family',$data);
     }
 
-    public function filtercommunity($p1,$p2,$p3)
+    public function filtercommunity()
     {
+        $p1 = $this->input->get('p1');
+        $p2 = $this->input->get('p2');
+        $p3 = $this->input->get('p3');
        //$data['communities']=array();
         $this->load->helper('url');
         //$districtid=$this->input->post('districtid');

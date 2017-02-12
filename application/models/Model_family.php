@@ -109,6 +109,7 @@ class Model_family extends CI_Model{
     public function getfamilyinfo1($districtId)
     {
      
+        
         $config['base_url']=site_url('Family/filterdistrict/').$districtId;
         $config['total_rows']=$this->db->count_all_results('family');
         $page_size=6;
@@ -117,7 +118,7 @@ class Model_family extends CI_Model{
         $offset=intval($this->uri->segment(4));
         if($offset>=2)
           $offset=(intval($this->uri->segment(4))-1)*$page_size;
-
+        
         $this->db->select('family.*,community.name as communityName,street.name as streetName,street.id as streetId,district.name as districtName');
         $this->db->from('family');
         if($districtId!=null && $districtId!=0){
@@ -129,7 +130,7 @@ class Model_family extends CI_Model{
          $this->db->order_by('family.id','asc');
          $this->db->limit($page_size,$offset);
         $data['families'] = $this->db->get()->result_array();
-        //var_dump($result);
+       // var_dump($data);
         return $data;
 
     }
@@ -245,5 +246,7 @@ class Model_family extends CI_Model{
         $this->db->update('family', $data);
     }
     
-    
+    function getCount(){
+        return $this->db->count_all_results('family');
+    }
 }

@@ -8,7 +8,7 @@ function edit_district(id){
     $("#editView").show();
     $("#district_id").val(id);
     //var editURL = "<?php echo site_url('district/getById')?>"
-    var editURL = "district/getById"
+    var editURL = "/jiacheng/index.php/district/getById";
     $.ajax({
         type:"POST",
         url:editURL,
@@ -28,7 +28,7 @@ function edit_district(id){
 function update_district(){
     var id=$("#district_id").val();
     var newName = $("#district_name").val();
-    var updateURL = "district/updateName";
+    var updateURL = "/jiacheng/index.php/district/updateName";
     $.ajax({
         type:"POST",
         url:updateURL,
@@ -77,7 +77,7 @@ function insert_show(){
  */
 function insert_district(){
     var name=$("#insert_district_name").val();
-    var insertURL = "district/insertDistrict";
+    var insertURL = "/jiacheng/index.php/district/insertDistrict";
     $.ajax({
         type:"POST",
         url:insertURL,
@@ -93,9 +93,10 @@ function insert_district(){
                 close_view();
                 layer.msg('保存失败',{time: 1200});  
             }
-            /*setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+            setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
                 window.location.reload();//页面刷新
-            },1500); */
+            },1500); 
+            /*
             html  ='';
             html +='  <tr>';
             html+='       <td>1</td>';
@@ -109,6 +110,7 @@ function insert_district(){
             html+='       </tr>';
             
            $("#district_table").append(html);
+           */
         }
     });
 }
@@ -126,7 +128,8 @@ function delete_district(id){
             btn: ['确定','取消'] //按钮
         }, 
         function(){
-            var deleteURL = "district/deleteDistrict"
+            //var deleteURL ="<?php echo site_url('district/deleteDistrict')?>";
+            var deleteURL = "/jiacheng/index.php/district/deleteDistrict";
             $.ajax({
                 type:"POST",
                 url:deleteURL,

@@ -9,7 +9,7 @@
 $(document).ready(function(){ 
     $('#districtId').change(function(){ 
         var p1=$(this).children('option:selected').val();//这就是selected的值 
-
+       
         //var districtUrl="/street/filterdistrict";
         window.location.href="/jiacheng/index.php/family/filterdistrict?p1="+p1;//页面跳转并传参 
      

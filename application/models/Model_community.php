@@ -143,7 +143,7 @@ class Model_community extends CI_Model{
          $this->db->order_by('community.id','asc');
          $this->db->limit($page_size,$offset);
         $data['communities'] = $this->db->get()->result_array();
-        //var_dump($result);
+        var_dump($data);
         return $data;
 
     } 

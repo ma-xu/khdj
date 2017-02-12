@@ -98,7 +98,7 @@ function edit_street(id){
     $("#editView").show();
     $("#edit_street_id").val(id);
     //var editURL = "<?php echo site_url('district/getById')?>"
-    var editURL = "street/getById";
+    var editURL = "/jiacheng/index.php/street/getById";
     $.ajax({
         type:"POST",
         url:editURL,

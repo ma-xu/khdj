@@ -32,6 +32,7 @@ class Model_district extends CI_Model{
         $this->pagination->initialize($config);
         $data['links']=$this->pagination->create_links();
         $offset=intval($this->uri->segment(3));
+        
         if($offset>=2)
           $offset=($offset-1)*$page_size;
         $sql="select * from district limit $offset ,$page_size";

@@ -21,8 +21,9 @@ class Street extends CI_Controller{
         $this->load->view('street',$data);
     }
     
-    public function filterdistrict($p1)
+    public function filterdistrict()
     {
+        $p1 = $this->input->get('p1');
         $this->load->helper('url');
         $districtid=$p1;
         $data=$this->Model_street->getstreetinfo_page($districtid);
