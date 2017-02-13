@@ -27,7 +27,7 @@ class User extends CI_Controller{
         $data['families']=array();
         $this->load->helper('url');
         $familyId=$_GET['p1'];
-        $data['users']=$this->Model_user->getuserinfo($familyId);
+        $data=$this->Model_user->getuserinfo($familyId);
         $data['total_counts']=$this->session->userdata('users_count');
         $data['families']=$this->Model_family->query_all();
         $data['choseid']=$familyId;

@@ -101,11 +101,7 @@ class Model_user extends CI_Model{
 
     public function getuserinfo($familyId)
     {
-        $config['base_url']=site_url('User/filterfamily/').$familyId;
-        $config['total_rows']=$this->db->count_all_results('user');
         $page_size=6;
-        $this->pagination->initialize($config);
-        $data['links']=$this->pagination->create_links();
         $offset=intval($this->uri->segment(4));
         if($offset>=2)
           $offset=($offset-1)*$page_size;
@@ -120,6 +116,13 @@ class Model_user extends CI_Model{
         $this->db->order_by('id','asc');
         $this->db->limit($page_size,$offset);
         $data['users'] = $this->db->get()->result_array();
+        $count = count($data['users']);
+        
+        $config['base_url']=site_url('User/filterfamily/').$familyId;
+        $config['total_rows']=$count;
+       
+        $this->pagination->initialize($config);
+        $data['links']=$this->pagination->create_links();
         return $data;
 
     } 

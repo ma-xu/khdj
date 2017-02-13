@@ -20,7 +20,7 @@
                             <a type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="close_view()">×</a>
                             <h4 class="modal-title">添加用户</h4>
                         </div>
-                        <div class="modal-body ui-front" style="min-height: 380px;">
+                        <div class="modal-body ui-front" style="min-height: 400px;">
                             
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label">用户姓名：</label>
@@ -73,8 +73,8 @@
                                 </div>
                                 
                                 <div class="form-group" >
-                                    <div class="col-sm-offset-8 col-sm-3">
-                                        <button class="btn  btn-warning" style="margin-top: 10px;margin-bottom:10px;" onclick="insert_user()">保存</button>
+                                    <div class="col-sm-offset-5 col-sm-4">
+                                        <button class="btn  btn-warning " style="margin-top: 10px;margin-bottom:10px;" onclick="insert_user()">保存</button>
                                     </div>
                                 </div>
                         </div>
@@ -93,7 +93,7 @@
                             <a type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="close_view()">×</a>
                             <h4 class="modal-title">修改信息</h4>
                         </div>
-                        <div class="modal-body ui-front" style="min-height: 380px;">
+                        <div class="modal-body ui-front" style="min-height: 420px;">
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">姓名：</label>
                                     <div class="col-sm-8">
@@ -156,7 +156,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group" >
-                                    <div class="col-sm-offset-3 col-sm-8">
+                                    <div class="col-sm-offset-5 col-sm-4">
                                         <button class="btn  btn-warning" style="margin-top: 10px;margin-bottom:10px;" onclick="update_user()">修改</button>
                                     </div>
                                 </div>

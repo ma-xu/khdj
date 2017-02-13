@@ -11,7 +11,7 @@ $(document).ready(function(){
         var p1=$(this).children('option:selected').val();//这就是selected的值 
 
         //var districtUrl="/street/filterdistrict";
-        window.location.href="/jiacheng/index.php/user/filterfamily/"+p1;//页面跳转并传参 
+        window.location.href="/jiacheng/index.php/user/filterfamily?p1="+p1;//页面跳转并传参 
      
     });
 
