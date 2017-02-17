@@ -205,11 +205,12 @@
                 </div>
             </div>
         </div> 
-        <div class="text-center col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
+        <div class="text-center col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2" style="padding-bottom: 20px;">
             <button type="submit" class="btn btn-warning btn-block">注&nbsp;&nbsp;册</button>
         </div>
-       
+        
     </form>
+   
 </body>
 <script>
     
